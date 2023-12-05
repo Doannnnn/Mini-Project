@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+<div id="root">
+    <div class="Toastify"></div>
+    <div class="container d-flex align-items-center border-bottom py-2 mt-2">
+        <div class="d-flex align-items-center" style="min-width: 180px;"><a class="logo" href="/">
+            <svg
+                    stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" class="me-2"
+                    height="22" width="22" xmlns="http://www.w3.org/2000/svg">
+                <path
+                        d="M504.717 320H211.572l6.545 32h268.418c15.401 0 26.816 14.301 23.403 29.319l-5.517 24.276C523.112 414.668 536 433.828 536 456c0 31.202-25.519 56.444-56.824 55.994-29.823-.429-54.35-24.631-55.155-54.447-.44-16.287 6.085-31.049 16.803-41.548H231.176C241.553 426.165 248 440.326 248 456c0 31.813-26.528 57.431-58.67 55.938-28.54-1.325-51.751-24.385-53.251-52.917-1.158-22.034 10.436-41.455 28.051-51.586L93.883 64H24C10.745 64 0 53.255 0 40V24C0 10.745 10.745 0 24 0h102.529c11.401 0 21.228 8.021 23.513 19.19L159.208 64H551.99c15.401 0 26.816 14.301 23.403 29.319l-47.273 208C525.637 312.246 515.923 320 504.717 320zM408 168h-48v-40c0-8.837-7.163-16-16-16h-16c-8.837 0-16 7.163-16 16v40h-48c-8.837 0-16 7.163-16 16v16c0 8.837 7.163 16 16 16h48v40c0 8.837 7.163 16 16 16h16c8.837 0 16-7.163 16-16v-40h48c8.837 0 16-7.163 16-16v-16c0-8.837-7.163-16-16-16z">
+                </path>
+            </svg>
+            Shoe Ecommerce</a></div>
+        <div class="d-flex flex-grow-1 justify-content-between">
+            <form class="w-50 d-flex align-items-center"><input type="search" placeholder="Enter your search shoes"
+                                                                class="form-control form-control-sm" value=""
+                                                                style="padding-right: 25px;">
+                <svg
+                        stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="15"
+                        width="15" xmlns="http://www.w3.org/2000/svg"
+                        style="color: rgba(0, 0, 0, 0.2); margin-left: -25px;">
+                    <path
+                            d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z">
+                    </path>
+                </svg>
+            </form>
+            <div class="d-flex" id="cart">
+
+            </div>
+        </div>
+    </div>
+    <div class="container d-flex">
+        <div style="min-width: 180px;">
+            <div class="d-flex flex-column border-end me-1 h-100">
+                <div class="py-2 d-flex flex-column justify-content-center">
+                    <h5>Category</h5>
+                    <div class="form-group">
+                        <div class="form-check py-1"><input class="form-check-input" type="radio" name="category"
+                                                            id="cat_0" value="All" checked=""><label for="cat_0"
+                                                                                                     role="button"
+                                                                                                     class="form-check-label text-decoration-underline fw-bolder">All</label>
+                        </div>
+                        <div class="form-check py-1"><input class="form-check-input" type="radio" name="category"
+                                                            id="cat_1" value="Sneakers"><label for="cat_1" role="button"
+                                                                                               class="form-check-label ">Sneakers</label>
+                        </div>
+                        <div class="form-check py-1"><input class="form-check-input" type="radio" name="category"
+                                                            id="cat_2" value="Flats"><label for="cat_2" role="button"
+                                                                                            class="form-check-label ">Flats</label>
+                        </div>
+                        <div class="form-check py-1"><input class="form-check-input" type="radio" name="category"
+                                                            id="cat_3" value="Sandals"><label for="cat_3" role="button"
+                                                                                              class="form-check-label ">Sandals</label>
+                        </div>
+                        <div class="form-check py-1"><input class="form-check-input" type="radio" name="category"
+                                                            id="cat_4" value="Heels"><label for="cat_4" role="button"
+                                                                                            class="form-check-label ">Heels</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="py-2 d-flex flex-column justify-content-center">
+                    <h5>Price</h5>
+                    <div class="form-group">
+                        <div class="form-check py-1"><input class="form-check-input" type="radio" name="price"
+                                                            id="price_0" value="0" checked=""><label role="button"
+                                                                                                       for="price_0"
+                                                                                                       class="form-check-label text-decoration-underline fw-bolder">All</label>
+                        </div>
+                        <div class="form-check py-1"><input class="form-check-input" type="radio" name="price"
+                                                            id="price_1" value="50"><label role="button" for="price_1"
+                                                                                             class="form-check-label ">$0-$50</label>
+                        </div>
+                        <div class="form-check py-1"><input class="form-check-input" type="radio" name="price"
+                                                            id="price_2" value="100"><label role="button"
+                                                                                               for="price_2"
+                                                                                               class="form-check-label ">$50-$100</label>
+                        </div>
+                        <div class="form-check py-1"><input class="form-check-input" type="radio" name="price"
+                                                            id="price_3" value="150"><label role="button"
+                                                                                                for="price_3"
+                                                                                                class="form-check-label ">$100-$150</label>
+                        </div>
+                        <div class="form-check py-1"><input class="form-check-input" type="radio" name="price"
+                                                            id="price_4" value="200"><label role="button"
+                                                                                                for="price_4"
+                                                                                                class="form-check-label ">Over
+                            $150</label></div>
+                    </div>
+                </div>
+                <div class="py-2 d-flex flex-column justify-content-center">
+                    <h5>Colors</h5>
+                    <div class="form-group">
+                        <div class="form-check py-1"><input class="form-check-input" type="radio" name="color"
+                                                            id="color_0" value="All" checked=""
+                                                            style="background-image: linear-gradient(to right, red, green);"><label
+                                role="button" for="color_0"
+                                class="form-check-label text-decoration-underline fw-bolder">All</label></div>
+                        <div class="form-check py-1"><input class="form-check-input" type="radio" name="color"
+                                                            id="color_1" value="Black" style="background-color: black;"><label
+                                role="button"
+                                for="color_1" class="form-check-label ">Black</label></div>
+                        <div class="form-check py-1"><input class="form-check-input" type="radio" name="color"
+                                                            id="color_2" value="Blue"
+                                                            style="background-color: blue;"><label role="button"
+                                                                                                   for="color_2"
+                                                                                                   class="form-check-label ">Blue</label>
+                        </div>
+                        <div class="form-check py-1"><input class="form-check-input" type="radio" name="color"
+                                                            id="color_3" value="Red"
+                                                            style="background-color: red;"><label role="button"
+                                                                                                  for="color_3"
+                                                                                                  class="form-check-label ">Red</label>
+                        </div>
+                        <div class="form-check py-1"><input class="form-check-input" type="radio" name="color"
+                                                            id="color_4" value="Green" style="background-color: green;"><label
+                                role="button"
+                                for="color_4" class="form-check-label ">Green</label></div>
+                        <div class="form-check py-1"><input class="form-check-input" type="radio" name="color"
+                                                            id="color_5" value="White"><label role="button"
+                                                                                              for="color_5"
+                                                                                              class="form-check-label ">White</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex-grow-1">
+            <div class="py-2 d-flex flex-column justify-content-center">
+                <h5>Recommended</h5>
+                <div class="form-group">
+                    <button class="btn btn-sm btn-outline-secondary me-1 active" type="button">All Products</button>
+                    <button class="btn btn-sm btn-outline-secondary me-1" type="button">Nike</button>
+                    <button class="btn btn-sm btn-outline-secondary me-1" type="button">Adidas</button>
+                    <button class="btn btn-sm btn-outline-secondary me-1" type="button">Puma</button>
+                    <button class="btn btn-sm btn-outline-secondary me-1" type="button">Vans</button>
+                </div>
+            </div>
+            <div class="py-2 d-flex flex-column justify-content-center">
+                <h5>Products</h5>
+                <div class="container px-6" style="height: 85vh">
+                    <div class="row" id="btProduct">
+
+                    </div>
+                </div>
+            </div>
+
+            <nav aria-label="Pagination" class="d-flex justify-content-center">
+                <ul class="pagination">
+
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+<div id="root">
+    <div class="Toastify"></div>
+    <div class="container">
+        <div class="d-flex align-items-center justify-content-between py-3 border-bottom">
+            <div class="d-flex align-items-center" style="min-width: 180px;"><a class="logo"
+                                                                                href="/dashboard/order-list">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" class="me-2"
+                     height="22" width="22" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M504.717 320H211.572l6.545 32h268.418c15.401 0 26.816 14.301 23.403 29.319l-5.517 24.276C523.112 414.668 536 433.828 536 456c0 31.202-25.519 56.444-56.824 55.994-29.823-.429-54.35-24.631-55.155-54.447-.44-16.287 6.085-31.049 16.803-41.548H231.176C241.553 426.165 248 440.326 248 456c0 31.813-26.528 57.431-58.67 55.938-28.54-1.325-51.751-24.385-53.251-52.917-1.158-22.034 10.436-41.455 28.051-51.586L93.883 64H24C10.745 64 0 53.255 0 40V24C0 10.745 10.745 0 24 0h102.529c11.401 0 21.228 8.021 23.513 19.19L159.208 64H551.99c15.401 0 26.816 14.301 23.403 29.319l-47.273 208C525.637 312.246 515.923 320 504.717 320zM408 168h-48v-40c0-8.837-7.163-16-16-16h-16c-8.837 0-16 7.163-16 16v40h-48c-8.837 0-16 7.163-16 16v16c0 8.837 7.163 16 16 16h48v40c0 8.837 7.163 16 16 16h16c8.837 0 16-7.163 16-16v-40h48c8.837 0 16-7.163 16-16v-16c0-8.837-7.163-16-16-16z"></path>
+                </svg>
+                Dashoard</a></div>
+            <div><a href="/">Lê Văn Đạt
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 256 256" height="1em"
+                     width="1em" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M112,216a8,8,0,0,1-8,8H48a16,16,0,0,1-16-16V48A16,16,0,0,1,48,32h56a8,8,0,0,1,0,16H48V208h56A8,8,0,0,1,112,216Zm109.66-93.66-40-40a8,8,0,0,0-11.32,11.32L196.69,120H104a8,8,0,0,0,0,16h92.69l-26.35,26.34a8,8,0,0,0,11.32,11.32l40-40A8,8,0,0,0,221.66,122.34Z"></path>
+                </svg>
+            </a></div>
+        </div>
+        <div class="d-flex py-2">
+            <div style="min-width: 180px;">
+                <div class=""><h5>Menu</h5>
+                    <div class="d-flex flex-column"><a class="menu d-flex align-items-center"
+                                                       href="/dashboard/order-list">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512"
+                             class="me-2" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M504.717 320H211.572l6.545 32h268.418c15.401 0 26.816 14.301 23.403 29.319l-5.517 24.276C523.112 414.668 536 433.828 536 456c0 31.202-25.519 56.444-56.824 55.994-29.823-.429-54.35-24.631-55.155-54.447-.44-16.287 6.085-31.049 16.803-41.548H231.176C241.553 426.165 248 440.326 248 456c0 31.813-26.528 57.431-58.67 55.938-28.54-1.325-51.751-24.385-53.251-52.917-1.158-22.034 10.436-41.455 28.051-51.586L93.883 64H24C10.745 64 0 53.255 0 40V24C0 10.745 10.745 0 24 0h102.529c11.401 0 21.228 8.021 23.513 19.19L159.208 64H551.99c15.401 0 26.816 14.301 23.403 29.319l-47.273 208C525.637 312.246 515.923 320 504.717 320zM403.029 192H360v-60c0-6.627-5.373-12-12-12h-24c-6.627 0-12 5.373-12 12v60h-43.029c-10.691 0-16.045 12.926-8.485 20.485l67.029 67.029c4.686 4.686 12.284 4.686 16.971 0l67.029-67.029c7.559-7.559 2.205-20.485-8.486-20.485z"></path>
+                        </svg>
+                        Order List</a><a aria-current="page" class="menu d-flex align-items-center active"
+                                         href="/dashboard/product-list">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512"
+                             class="me-2" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M128 352H32c-17.67 0-32 14.33-32 32v96c0 17.67 14.33 32 32 32h96c17.67 0 32-14.33 32-32v-96c0-17.67-14.33-32-32-32zm-24-80h192v48h48v-48h192v48h48v-57.59c0-21.17-17.23-38.41-38.41-38.41H344v-64h40c17.67 0 32-14.33 32-32V32c0-17.67-14.33-32-32-32H256c-17.67 0-32 14.33-32 32v96c0 17.67 14.33 32 32 32h40v64H94.41C73.23 224 56 241.23 56 262.41V320h48v-48zm264 80h-96c-17.67 0-32 14.33-32 32v96c0 17.67 14.33 32 32 32h96c17.67 0 32-14.33 32-32v-96c0-17.67-14.33-32-32-32zm240 0h-96c-17.67 0-32 14.33-32 32v96c0 17.67 14.33 32 32 32h96c17.67 0 32-14.33 32-32v-96c0-17.67-14.33-32-32-32z"></path>
+                        </svg>
+                        Products</a></div>
+                </div>
+            </div>
+            <div class="flex-grow-1">
+                <div class="container">
+                    <div class="row product-title">
+                        <div class="col-lg-12 d-flex align-items-center justify-content-between"><h5>Product List
+                            Management</h5>
+                            <button class="btn btn-warning btn-sm d-flex align-items-center" onclick="showModalCreate()">
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512"
+                                     class="me-2" height="15" width="15" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path>
+                                </svg>
+                                Add new Product
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-form my-1" style="display: none">
+                        <form class="row">
+                            <div class="col-md-4">
+                                <div class="form-group mb-2"><label class="form-label">Title</label><input type="text"
+                                                                                                           class="form-control form-control-sm "
+                                                                                                           placeholder="Title"
+                                                                                                           name="title"><span
+                                        class="invalid-feedback"></span></div>
+                                <div class="form-group mb-2"><label class="form-label">Price</label><input type="text"
+                                                                                                           class="form-control form-control-sm "
+                                                                                                           placeholder="Price"
+                                                                                                           name="newPrice"><span
+                                        class="invalid-feedback"></span></div>
+                                <div class="form-group mb-2">
+                                    <div class="d-flex">
+                                        <button type="button"
+                                                class="btn btn-success btn-sm flex-grow-1 me-2 d-flex align-items-center justify-content-center">
+                                            <svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                                 viewBox="0 0 448 512" class="me-2" height="1em" width="1em"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path>
+                                            </svg>
+                                            Add
+                                        </button>
+                                        <button type="button" onclick="closeModalCreate()"
+                                                class="btn btn-dark btn-sm flex-grow-1 d-flex align-items-center justify-content-center">
+                                            <svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                                 viewBox="0 0 352 512" class="me-2" height="1em" width="1em"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path>
+                                            </svg>
+                                            Close
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group mb-2"><label class="form-label">Category</label><select
+                                        class="form-control form-control-sm " name="category">
+                                    <option value="" disabled="" selected="">Please select category</option>
+                                    <option value="Sneakers">Sneakers</option>
+                                    <option value="flats">flats</option>
+                                    <option value="Sandals">Sandals</option>
+                                    <option value="heels">heels</option>
+                                </select><span class="invalid-feedback"></span></div>
+                                <div class="form-group mb-2"><label class="form-label">Company</label><select
+                                        class="form-control form-control-sm " name="company">
+                                    <option value="" disabled="" selected="">Please select company</option>
+                                    <option value="Nike">Nike</option>
+                                    <option value="Adidas">Adidas</option>
+                                    <option value="Puma">Puma</option>
+                                    <option value="Vans">Vans</option>
+                                </select><span class="invalid-feedback"></span></div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group mb-2"><label class="form-label">Color</label><select
+                                        class="form-control form-control-sm " name="color">
+                                    <option value="" disabled="" selected="">Please select color</option>
+                                    <option value="black">black</option>
+                                    <option value="blue">blue</option>
+                                    <option value="red">red</option>
+                                    <option value="green">green</option>
+                                    <option value="white">white</option>
+                                </select><span class="invalid-feedback"></span></div>
+                                <div class="form-group mb-2"><label class="form-label">Image</label><input type="text"
+                                                                                                           class="form-control form-control-sm "
+                                                                                                           placeholder="Image"
+                                                                                                           name="img"><span
+                                        class="invalid-feedback"></span></div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="row product-list">
+                        <table class="table table-striped product-table">
+                            <thead>
+                            <tr>
+                                <th class="text-center">Title</th>
+                                <th class="text-start">Color</th>
+                                <th class="text-start">Category</th>
+                                <th class="text-start">Company</th>
+                                <th class="text-end">Price</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                            </thead>
+                            <tbody id="tbProductList">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/dashboard.js"></script>
+
+</body>
+</html>
